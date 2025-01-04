@@ -1,0 +1,193 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #f0f4fc, #ffffff); /* Subtle gradient */
+    color: #333; /* Dark text for better readability */
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #1e88e5; /* Bright primary blue */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    font-weight: bold; /* Makes the text more prominent */
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #b3e5fc; /* Slightly lighter for contrast */
+    margin-top: 0.5rem;
+}
+
+/* Main Form Section */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease; /* Subtle entrance animation */
+}
+
+/* Form title styling (optional) */
+.form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Input Fields */
+.form-container input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Smoothly transition on focus and hover */
+}
+
+.form-container input:focus {
+    border-color: #1e88e5; /* Highlighted border color on focus */
+    outline: none;
+    box-shadow: 0 0 3px rgba(30, 136, 229, 0.5); /* Subtle glow */
+}
+
+/* Button */
+.form-container button {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Necessary for spinner positioning */
+}
+
+.form-container button:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px); /* Adds a hover lifting effect */
+}
+
+.form-container button:active {
+    background-color: #0d47a1;
+    transform: translateY(0); /* Pressed state */
+}
+
+/* Spinner for Button */
+#spinner {
+    border: 3px solid white;
+    border-top: 3px solid #1565c0;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    animation: spin 0.75s linear infinite; /* Faster spin for realism */
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+button.loading #button-text {
+    visibility: hidden;
+}
+
+button.loading #spinner {
+    display: inline-block;
+}
+
+/* Additional Text Fields */
+#security-message {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+#ip-display {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 1rem;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ccc;
+}
+
+footer a {
+    color: #1e88e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #1565c0;
+}
+
+/* Animation for Container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
